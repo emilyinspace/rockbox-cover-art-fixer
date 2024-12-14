@@ -87,10 +87,10 @@ def extract_cover_ffmpeg(directory, temp_folder):
             print(f"Selected image file '{selected_image_file}' set as cover image.")
 
             # Delete other image files
-            for image_file in image_files:
-                if image_file != selected_image_file:
-                    os.remove(os.path.join(directory, image_file))
-                    print(f"Deleted redundant image file '{image_file}'.")
+            #for image_file in image_files:
+            #    if image_file != selected_image_file:
+            #        os.remove(os.path.join(directory, image_file))
+            #        print(f"Deleted redundant image file '{image_file}'.")
 
         else:
             flac_files = [file for file in files if file.endswith(".flac")]
@@ -251,7 +251,7 @@ def clear_temp_directory():
 
 if __name__ == "__main__":
 
-    root_directory = sys.arv[1]
+    root_directory = sys.argv[1]
 
     if not root_directory:
         print("\nNo directory selected. Exiting.")

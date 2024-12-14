@@ -1,11 +1,11 @@
+#!/usr/bin/env python3
+
 import os
 import shutil
 import time
 from PIL import Image, UnidentifiedImageError
 import subprocess
 import sys
-import tkinter as tk
-from tkinter import filedialog
 from eyed3 import id3
 from mutagen import File
 import tempfile
@@ -250,10 +250,8 @@ def clear_temp_directory():
 
 
 if __name__ == "__main__":
-    root = tk.Tk()
-    root.withdraw()
 
-    root_directory = filedialog.askdirectory(title="Select Root Directory")
+    root_directory = sys.arv[1]
 
     if not root_directory:
         print("\nNo directory selected. Exiting.")
